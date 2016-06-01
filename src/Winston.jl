@@ -469,7 +469,7 @@ function _format_ticklabel(x, range=0.; min_pow10=4)
     if length(digits) > 5
         neg, digits, b = grisu(x, Base.Grisu.PRECISION, @compat Int32(6))
         n = length(digits)
-        while digits[n] == '0'
+        while digits[n] == UInt32('0')
             n -= 1
         end
         digits = digits[1:n]
