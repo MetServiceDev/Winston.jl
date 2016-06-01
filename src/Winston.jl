@@ -1860,7 +1860,7 @@ function savesvg(p::PlotContainer, io::IO, width, height)
 end
 
 function savesvg(p::PlotContainer, filename::AbstractString, width, height)
-    io = Base.FS.open(filename, Base.JL_O_CREAT|Base.JL_O_TRUNC|Base.JL_O_WRONLY, 0o644)
+    io = Base.FileSystem.open(filename, Base.JL_O_CREAT|Base.JL_O_TRUNC|Base.JL_O_WRONLY, 0o644)
     savesvg(p, io, width, height)
     close(io)
     nothing
